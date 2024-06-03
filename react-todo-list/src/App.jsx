@@ -23,9 +23,8 @@ function App() {
           placeholder='Add a new task' />
         <button onClick={handleAddTask}>Add Task</button>
         <ul>
-          <li>List:</li>
           {tasks.map((task, index) => {
-            <li key={index}>{task}</li>
+            return <li key={index}>{task}</li>
           })}
         </ul>
       </header>
