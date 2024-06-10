@@ -11,7 +11,15 @@ function App() {
       setInput('');
     }
   }
-
+  const handleToggleTask = (index) => {
+    const newTask = tasks.map((task, i) => {
+      if (i === index) {
+        return { ...task, completed: !task.completed };
+      }
+      return task;
+    });
+    setTasks(newTask);
+  }
   return (
     <div className='App'>
       <header className="app-header">
@@ -24,7 +32,9 @@ function App() {
         <button onClick={handleAddTask}>Add Task</button>
         <ul>
           {tasks.map((task, index) => {
-            return <li key={index}>{task}</li>
+            return <li key={index} style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>{task}
+              <button onClick={() => handleToggleTask(index)}>Toggle Complete</button>
+            </li>
           })}
         </ul>
       </header>
