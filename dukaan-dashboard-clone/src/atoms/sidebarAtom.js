@@ -1,8 +1,6 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
-const SideBarOpen = atom({
-  key: "SideBarOpen",
-  default: false,
+export const SideBarOpen = atom({
+    key: 'SideBarOpen',
+    default: false,
 });
-
-export { SideBarOpen };
